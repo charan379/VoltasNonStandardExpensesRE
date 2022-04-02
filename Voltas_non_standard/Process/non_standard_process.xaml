@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2599,5169</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2599,6515</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Sequence_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="47">
@@ -103,14 +103,12 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main NonS Process" sap:VirtualizedContainerService.HintSize="2609,5104" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main NonS Process" sap:VirtualizedContainerService.HintSize="2609,6450" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Expense Amount" Name="amount" />
+      <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="pincode Amount in database" Name="amount" />
       <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Action Taken" Default="AT" Name="AT" />
       <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Action Group" Default="AG" Name="AG" />
-      <Variable x:TypeArguments="x:String" Name="majorgas" />
-      <Variable x:TypeArguments="x:String" Name="Rates" />
-      <Variable x:TypeArguments="ui:DatabaseConnection" Name="DBconnection" />
+      <Variable x:TypeArguments="ui:DatabaseConnection" sap2010:Annotation.AnnotationText="Data base Connection" Name="DBconnection" />
       <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Expense ID" Name="OrderNumber">
         <Variable.Default>
           <Literal x:TypeArguments="x:String">Not Created</Literal>
@@ -121,7 +119,7 @@
           <Literal x:TypeArguments="x:String">Unkown</Literal>
         </Variable.Default>
       </Variable>
-      <Variable x:TypeArguments="x:String" Name="ExpenseType" />
+      <Variable x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Expense type&#xD;&#xA;" Name="ExpenseType" />
       <Variable x:TypeArguments="x:String" Name="TransportType" />
       <Variable x:TypeArguments="x:String" Name="ExpenseAmount" />
       <Variable x:TypeArguments="x:String" Name="DealerExplanation" />
@@ -139,7 +137,7 @@
         <InArgument x:TypeArguments="ui:DatabaseConnection">[in_DbConnection]</InArgument>
       </Assign.Value>
     </Assign>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="2567,4912" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="2567,6258" sap2010:WorkflowViewState.IdRef="TryCatch_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -147,7 +145,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="order creator" sap:VirtualizedContainerService.HintSize="2529,4634" sap2010:WorkflowViewState.IdRef="Sequence_51">
+        <Sequence DisplayName="order creator" sap:VirtualizedContainerService.HintSize="2529,5980" sap2010:WorkflowViewState.IdRef="Sequence_51">
           <Sequence.Variables>
             <Variable x:TypeArguments="sd:DataTable" Name="DT_tada" />
             <Variable x:TypeArguments="sd:DataTable" Name="DT_pincode_status" />
@@ -297,9 +295,9 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:ExecuteQuery>
-          <If Condition="[DT_pincode_status.RowCount &gt;0]" DisplayName="Check If pincode is there" sap:VirtualizedContainerService.HintSize="2487,3762" sap2010:WorkflowViewState.IdRef="If_5">
+          <If Condition="[DT_pincode_status.RowCount &gt;0]" DisplayName="Check If pincode is there" sap:VirtualizedContainerService.HintSize="2487,5108" sap2010:WorkflowViewState.IdRef="If_5">
             <If.Then>
-              <Sequence DisplayName="Create If Pincode Found" sap:VirtualizedContainerService.HintSize="2138,3602" sap2010:WorkflowViewState.IdRef="Sequence_52">
+              <Sequence DisplayName="Create If Pincode Found" sap:VirtualizedContainerService.HintSize="2138,4948" sap2010:WorkflowViewState.IdRef="Sequence_52">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -324,7 +322,7 @@
                     <InArgument x:TypeArguments="x:String">[DT_tada.Rows(0)(0).ToString.Trim]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <If Condition="[Cint(amount )&gt; CInt(in_Config(&quot;MinAmount&quot;).ToString.Trim)]" DisplayName="Check Amount" sap:VirtualizedContainerService.HintSize="2096,3282" sap2010:WorkflowViewState.IdRef="If_4">
+                <If Condition="[Cint(amount )&gt; CInt(in_Config(&quot;MinAmount&quot;).ToString.Trim)]" DisplayName="Check Amount" sap:VirtualizedContainerService.HintSize="2096,4628" sap2010:WorkflowViewState.IdRef="If_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -332,13 +330,13 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <If.Then>
-                    <Sequence DisplayName="Creat TADA if amount  &gt; Min Amount" sap:VirtualizedContainerService.HintSize="1747,3122" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                    <Sequence DisplayName="Creat TADA if amount  &gt; Min Amount" sap:VirtualizedContainerService.HintSize="1747,4468" sap2010:WorkflowViewState.IdRef="Sequence_49">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence DisplayName="Create TADA for a SR" sap:VirtualizedContainerService.HintSize="1705,3030" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <Sequence DisplayName="Create TADA for a SR" sap:VirtualizedContainerService.HintSize="1705,4376" sap2010:WorkflowViewState.IdRef="Sequence_8">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:Boolean" Name="srFound" />
                           <Variable x:TypeArguments="sd:DataTable" Name="DT_areatype" />
@@ -567,10 +565,10 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:ExecuteQuery>
-                        <If Condition="[in_Config(&quot;Rates&quot;).ToString.Trim =&quot;MJGAS&quot;]" DisplayName="Expence Amount IF rates selecteed" sap:VirtualizedContainerService.HintSize="1663,52" sap2010:WorkflowViewState.IdRef="If_8">
+                        <If Condition="[in_Config(&quot;Rates&quot;).ToString.Trim =&quot;MJGAS&quot;]" DisplayName="Expence Amount IF rates selecteed" sap:VirtualizedContainerService.HintSize="1663,1398" sap2010:WorkflowViewState.IdRef="If_8">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
