@@ -1,6 +1,6 @@
 {
   "name": "VoltasNonStandardExpensesRE",
-  "description": "Robotic Enterprise Framework",
+  "description": "Voltas Non Standard Expense ( TA/DA ) Process Automation Using RE Framwork",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Database.Activities": "[1.5.0]",
