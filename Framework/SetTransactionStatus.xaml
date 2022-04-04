@@ -15,7 +15,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>740,1269</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1041,1269</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SetTransactionStatus_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="26">
@@ -133,27 +133,13 @@
                               <scg:Dictionary x:TypeArguments="x:String, InArgument" />
                             </ui:SetTransactionStatus.Analytics>
                             <ui:SetTransactionStatus.Output>
-                              <InArgument x:TypeArguments="x:String" x:Key="ExpenseID">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionOutPut(&quot;ExpenseID&quot;).ToString.Trim" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="ExpenseType">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionOutPut(&quot;ExpenseType&quot;).ToString.Trim" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="TravelType">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionOutPut(&quot;TravelType&quot;).ToString.Trim" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="DealerExplanation">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionOutPut(&quot;DealerExplanation&quot;).ToString.Trim" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="PincodeAmountDB">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionOutPut(&quot;PincodeAmountDB&quot;).ToString.Trim" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="ExpenseAmount">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionOutPut(&quot;ExpenseAmount&quot;).ToString.Trim" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="ExpenseStatus">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionOutPut(&quot;ExpenseStatus&quot;).ToString.Trim" />
-                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="ExpenseID">[in_TransactionOutPut("ExpenseID").ToString.Trim]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="ExpenseType">[in_TransactionOutPut("ExpenseType").ToString.Trim]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="TravelType">[in_TransactionOutPut("TravelType").ToString.Trim]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="DealerExplanation">[in_TransactionOutPut("DealerExplanation").ToString.Trim]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="PincodeAmountDB">[in_TransactionOutPut("PincodeAmountDB").ToString.Trim]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="ExpenseAmount">[in_TransactionOutPut("ExpenseAmount").ToString.Trim]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="ExpenseStatus">[in_TransactionOutPut("ExpenseStatus").ToString.Trim]</InArgument>
                             </ui:SetTransactionStatus.Output>
                           </ui:SetTransactionStatus>
                         </TryCatch.Try>
@@ -299,7 +285,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">330,637.333333333333 330,667.333333333333 210,667.333333333333 210,715.6</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence sap2010:Annotation.AnnotationText="If a BussinessRuleException is thrown during the process, the transaction item's status is updated as Failed (Exception Type: Business).&#xA;" DisplayName="Business Exception" sap:VirtualizedContainerService.HintSize="200,168" sap2010:WorkflowViewState.IdRef="Sequence_14">
+              <Sequence sap2010:Annotation.AnnotationText="If a BussinessRuleException is thrown during the process, the transaction item's status is updated as Failed (Exception Type: Business).&#xA;" DisplayName="Business Exception" sap:VirtualizedContainerService.HintSize="558,1220" sap2010:WorkflowViewState.IdRef="Sequence_14">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -400,7 +386,7 @@
                   <av:Size x:Key="ShapeSize">200,153</av:Size>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence sap2010:Annotation.AnnotationText="If a system exception occurs during the process, the transaction item's status is updated as Failed (Exception Type: Application)." DisplayName="System Exception" sap:VirtualizedContainerService.HintSize="558,2446" sap2010:WorkflowViewState.IdRef="Sequence_17">
+              <Sequence sap2010:Annotation.AnnotationText="If a system exception occurs during the process, the transaction item's status is updated as Failed (Exception Type: Application)." DisplayName="System Exception" sap:VirtualizedContainerService.HintSize="200,153" sap2010:WorkflowViewState.IdRef="Sequence_17">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:Boolean" Name="QueueRetry" />
                   <Variable x:TypeArguments="x:String" Name="ScreenshotPath" />
